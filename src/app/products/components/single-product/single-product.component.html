@@ -1,0 +1,22 @@
+<div class="product">
+<div routerLink="/details/{{product.id}}">
+  <div class="product-image">
+    <img src="{{product.image}}">
+  </div>
+  <div class="nameprice">
+    <h3 class="product-name">{{product.title}}</h3>
+    <span class="product-price">{{product.price}} $</span>
+  </div>
+  <p class="description">{{product.description}}</p>
+</div>
+
+  <div class="button-list">
+  <button (click)="toggleAddCart=true" *ngIf="!toggleAddCart" class="add-to-cart">Add To Cart</button>
+    <button (click)="FetchProductData();toggleAddCart=false" *ngIf="toggleAddCart" class="add-to-cart">Add</button>
+    <input type="number" class="form-control number-input"
+           *ngIf="toggleAddCart"
+           [(ngModel)]="quantity"
+           value="1" min="0">
+  </div>
+</div>
+

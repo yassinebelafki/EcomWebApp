@@ -1,0 +1,33 @@
+<div class="mycontainer">
+  <div class="mybox" *ngIf="!loading">
+  <div class="image">
+    <div class="image-holder">
+      <img src="{{productInfo.image}}">
+    </div>
+  </div>
+
+    <div class="product-info">
+      <strong> <h1>{{productInfo.title}}</h1> </strong>
+      <div class="rate">
+        <fa-icon [icon]="fastare"></fa-icon>
+        <fa-icon [icon]="fastare"></fa-icon>
+        <fa-icon [icon]="fastare"></fa-icon>
+        <fa-icon [icon]="fastare"></fa-icon>
+        <fa-icon [icon]="fastare"></fa-icon>
+      </div>
+      <span>{{productInfo.price}} <span class="dollar">$</span></span>
+      <div class="options">
+        <a class="buy-buttons" (click)="FetchProductData()">Add To Cart</a>
+        <input type="number" class="form-control number-input" [(ngModel)]="quantity">
+      </div>
+
+
+    <div class="product-details">
+        <p>{{productInfo.description}}</p>
+    </div>
+    </div>
+  </div>
+  <div class="spinner">
+  <app-spinner *ngIf="loading"></app-spinner>
+  </div>
+</div>

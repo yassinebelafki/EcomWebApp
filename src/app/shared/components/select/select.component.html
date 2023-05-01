@@ -1,0 +1,7 @@
+<div class="select-box">
+  <label>{{title}}</label>
+  <select (change)="itemchanged($event)">
+    <option value="all" selected>All</option>
+    <option value="{{item}}" *ngFor="let item of items">{{item}}</option>
+  </select>
+</div>

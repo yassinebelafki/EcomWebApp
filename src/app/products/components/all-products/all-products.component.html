@@ -1,0 +1,12 @@
+<app-select [title]="'Categories'"
+            [items]="categories"
+            (selectedValue)="fliterByCategorie($event)">
+</app-select>
+<div class="products" *ngIf="!loading">
+<app-single-product [product]="item" *ngFor="let item of productsList"
+                      (item)="addItemToCart($event)">
+</app-single-product>
+</div>
+<div class="spinner" *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>

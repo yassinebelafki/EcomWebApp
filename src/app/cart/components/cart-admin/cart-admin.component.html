@@ -1,0 +1,65 @@
+<div class="mycontainer">
+  <div class="mycartbox" *ngIf="!loading">
+    <div class="cartheader">
+      <div class="firstheader">
+        <h2>List of All Oredrs</h2>
+      </div>
+      <div class="dates">
+        <form [formGroup]="myform" (ngSubmit)="fetchDate()" >
+        <label>Start Date</label>
+        <input type="date" class="form-control date-input" formControlName="start">
+        <label>End Date</label>
+        <input type="date" class="form-control date-input" formControlName="end">
+        <button class="apply">Apply</button>
+        </form>
+      </div>
+    </div>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let cart of carts;let index = index">
+        <td>{{cart.date | date:"shortDate"}}</td>
+        <td>{{cart.products.length}}</td>
+        <td>
+        <div class="buttons-list">
+          <button class="delete-btn" (click)="deleteCart(cart.id)">Delete</button>
+          <button class="view-btn" (click)="onView(index)">View</button>
+        </div>
+        </td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+  <div class="spinner" *ngIf="loading">
+    <app-spinner ></app-spinner>
+  </div>
+  <div class="popup" *ngIf="viewed">
+    <div class="popuup-in">
+      <div class="exit-x" (click)="viewed=false">
+      <fa-icon [icon]="fax"></fa-icon>
+    </div>
+      <h3>Cart Details</h3>
+      <hr>
+      <div class="details">
+      <table>
+        <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        </tr>
+        <tr *ngFor="let item of cartDetailsFinal">
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.total}}</td>
+        </tr>
+      </table>
+        <hr>
+        <strong>Total : </strong>{{fullTotal}}
+      </div>
+  </div>
+</div>

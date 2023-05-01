@@ -1,0 +1,92 @@
+
+.product-image {
+  width: 100%;
+  height: 70%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+}
+img {
+  width: 200px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.product {
+  background-color: white;
+  width: 300px;
+  height: 800px;
+  margin: 10px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between ;
+  padding: 40px 15px;
+  transition: all 0.3s;
+  border-radius: 15px;
+
+}
+.nameprice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90px;
+  overflow: hidden;
+
+}
+.product-name {
+  font-size: 20px;
+}
+.product-price {
+  font-size: 20px;
+  color: red;
+}
+
+.description {
+  margin: 10px 0px;
+  font-size: 16px;
+  line-height: 25px;
+
+}
+.add-to-cart {
+
+  padding:10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: brown;
+  color: aliceblue;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+button:hover {
+  transform: scale(1.1);
+
+}
+.product:hover {
+  transform: translateY(+10px);
+
+}
+.button-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width :100%;
+  height: 10%;
+}
+.add {
+  font-size: 5px;
+}
+.number-input {
+  padding: 5px;
+  width: 50px;
+  height: 30px;
+}
+p {
+  height: 200px;
+  overflow: hidden;
+}
+
